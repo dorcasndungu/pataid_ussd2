@@ -31,14 +31,14 @@ def ussd_callback():
 
     elif text == '1':
         response = "CON Please select a city: \n"
-        response += "1. Nairobi"
-        response += "2. Kisumu"
+        response += "1. Nairobi\n"
+        response += "2. Kisumu\n"
         response += "3. Mombasa"
 
     elif text == '1*1':
         response = "CON Please select a location: \n"
-        response += "1. Kasarani"
-        response += "2. Utawala"
+        response += "1. Kasarani\n"
+        response += "2. Utawala\n"
         response += "3. Muthangari"
     elif text == '1*1*1':
         response = "CON Enter company pin to continue: \n"
