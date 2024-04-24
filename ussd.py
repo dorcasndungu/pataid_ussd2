@@ -42,7 +42,7 @@ def ussd_callback():
         response += "3. Muthangari"
     elif text == '1*1*1':
         response = "CON Enter company pin to continue: \n"
-    elif text == '1***':
+    elif text == '1*1*1*1':
         response = "END You have been successfully registered. Thank you!"
 
     elif text == '2':
