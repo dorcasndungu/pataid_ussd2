@@ -33,9 +33,9 @@ def ussd_callback():
     elif text == '1*':
         response = "CON Please enter location you will be agent for: \n"
 
-    elif text == '1**':
+    elif text == '1*1':
         response = "CON Please enter name and phone number e.g. Amos-0712345678: \n"
-    elif text == '1***':
+    elif text == '1*1*':
         response = "END You have been successfully registered. Thank you!"
 
     elif text == '2':
