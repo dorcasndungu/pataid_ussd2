@@ -1,15 +1,11 @@
-# import firebase_admin
-# from firebase_admin import credentials, db
-# cred = credentials.Certificate("C:\Users\pc\OneDrive\Desktop\Pata_id\credentials.json")
-# firebase_admin.initialize_app(cred, {'databaseURL': 'https://pataid-default-rtdb.firebaseio.com'})
 from flask import Flask, request
 import africastalking
 import os
 
-app = Flask(_name_)  # Corrected the variable name
+app = Flask(__name__)  # Corrected the variable name
 
-username = "sandbox"
-api_key = "4569fd7da8ff1ae406865f9c6db647ca5e3f4f420bdae95ed3d053af924be6fe"
+username = "snap1"
+api_key = "5b02c9a427c1e9dc48ad9eb583e399d06d8184004fa511cb111928868890743a"
 africastalking.initialize(username, api_key)
 sms = africastalking.SMS
 
@@ -26,36 +22,33 @@ def ussd_callback():
     # ussd logic
     # main menu
     if text == '':
-        response = "CON Welcome to Pata_ID! What do you want? \n"
-        response += "1. Report Lost ID \n"
-        response += "2. Report Found ID"
+        response = "CON Welcome to Pata Agents! Please choose a service \n"
+        response += "1. Register as an agent\n"
+        response += "2. Find agent"
 
     # Handling the menu options
     elif text == '1':
-        response = "CON Please enter your ID number\n"
+        response = "CON Enter company pin to continue: \n"
 
     elif text == '1*':
-        response = "CON Please enter the name as on the ID\n"
+        response = "CON Please enter location you will be agent for: \n"
 
     elif text == '1**':
-        response = "END Report submitted successfully. We will notify you when it is found. Thank you!"
+        response = "CON Please enter name and phone number e.g. Amos-0712345678: \n"
+    elif text == '1***':
+        response = "END You have been successfully registered. Thank you!"
 
     elif text == '2':
-        response = "CON Please enter the ID number found\n"
-
+        response = "CON Please enter the location you want an agent for: \n"
+#if theres agent, give details
+#if none, give message
     elif text == '2*':
-        response = "CON Please enter the name as on the ID\n"
-
-    elif text == '2**':
-        response = "CON Please enter the location found\n"
-
-    elif text == '2***':
-        response = "END Report submitted successfully. Thank you!"
+        response = "END Amos-0712345678\n"
 
     else:
         response = "END Invalid input. Try again."
 
     return response
 
-if _name_ == "main":  # Corrected the variable name
+if __name__ == "__main__":  # Corrected the variable name
     app.run(host="0.0.0.0", port= 3000)
