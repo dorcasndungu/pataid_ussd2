@@ -50,10 +50,10 @@ def ussd_callback():
 #if theres agent, give details
 #if none, give message
     elif text == '2*':
-        response = "END Amos-0712345678\n"
+        response = "CON Amos-0712345678\n"
 
     else:
-        response = "END Invalid input. Try again."
+        response = "END Thank you! Your data has been captured"
 
     return response
 
