@@ -47,6 +47,8 @@ def ussd_callback():
 
     elif text == '2':
         response = "CON Please enter the location you want an agent for: \n"
+        response += "1. Kasarani\n"
+        response += "2. Utawala\n"
 #if theres agent, give details
 #if none, give message
     elif text == '2*':
