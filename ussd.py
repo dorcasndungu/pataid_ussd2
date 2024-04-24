@@ -27,15 +27,22 @@ def ussd_callback():
         response += "2. Find agent"
 
     # Handling the menu options
-    elif text == '1':
-        response = "CON Enter company pin to continue: \n"
+  
 
-    elif text == '1*':
-        response = "CON Please enter location you will be agent for: \n"
+    elif text == '1':
+        response = "CON Please select a city: \n"
+        response += "1. Nairobi"
+        response += "2. Kisumu"
+        response += "3. Mombasa"
 
     elif text == '1*1':
-        response = "CON Please enter name and phone number e.g. Amos-0712345678: \n"
-    elif text == '1*1*':
+        response = "CON Please select a location: \n"
+        response += "1. Kasarani"
+        response += "2. Utawala"
+        response += "3. Muthangari"
+    elif text == '1*1*1':
+        response = "CON Enter company pin to continue: \n"
+    elif text == '1***':
         response = "END You have been successfully registered. Thank you!"
 
     elif text == '2':
